@@ -89,7 +89,7 @@
       noBtn.style.display = "none";
     });
 
-    noBtn.addEventListener("mouseover", () => {
+    noBtn.addEventListener("click", () => {
       const yesRect = yesBtn.getBoundingClientRect();
       let x, y;
       let tries = 0;
@@ -98,7 +98,7 @@
         x = Math.random() * (window.innerWidth - 100);
         y = Math.random() * (window.innerHeight - 50);
         tries++;
-        if (tries > 100) break; // prevent endless loop
+        if (tries > 100) break;
       } while (
         x > yesRect.left - 100 && x < yesRect.right + 100 &&
         y > yesRect.top - 50 && y < yesRect.bottom + 50
