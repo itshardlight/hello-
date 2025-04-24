@@ -20,6 +20,7 @@
       height: 100vh;
       text-align: center;
       overflow: hidden;
+      position: relative;
     }
     h1 {
       color: #ff3399;
@@ -91,12 +92,15 @@
 
     noBtn.addEventListener("click", () => {
       const yesRect = yesBtn.getBoundingClientRect();
+      const btnWidth = noBtn.offsetWidth;
+      const btnHeight = noBtn.offsetHeight;
+      const margin = 20;
       let x, y;
       let tries = 0;
 
       do {
-        x = Math.random() * (window.innerWidth - 100);
-        y = Math.random() * (window.innerHeight - 50);
+        x = Math.random() * (window.innerWidth - btnWidth - margin * 2) + margin;
+        y = Math.random() * (window.innerHeight - btnHeight - margin * 2) + margin;
         tries++;
         if (tries > 100) break;
       } while (
